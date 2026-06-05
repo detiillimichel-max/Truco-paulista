@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Truco Paulista - Jogo de Cartas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🃏 Truco Paulista 🃏</h1>
+            <div class="score-board">
+                <div class="score player-score">
+                    <span class="label">Jogador</span>
+                    <span class="value" id="player-score">0</span>
+                </div>
+                <div class="score vs">VS</div>
+                <div class="score computer-score">
+                    <span class="label">Computador</span>
+                    <span class="value" id="computer-score">0</span>
+                </div>
+            </div>
+        </header>
+
+        <div class="game-status" id="game-status">
+            <span id="status-message">Clique em "Jogar" para começar</span>
+        </div>
+
+        <div class="game-area">
+            <div class="computer-area">
+                <h3>Computador</h3>
+                <div id="computer-cards" class="cards computer-cards">
+                    <!-- Cartas do computador (viradas) -->
+                </div>
+                <div class="computer-info">
+                    <span id="computer-truco-status"></span>
+                </div>
+            </div>
+
+            <div class="table-area">
+                <div class="round-info">
+                    <div>Rodada: <span id="round-number">1</span>/3</div>
+                    <div>Pontos da rodada: <span id="round-points">1</span></div>
+                </div>
+                <div class="table-cards" id="table-cards">
+                    <div class="player-table" id="player-table-card"></div>
+                    <div class="computer-table" id="computer-table-card"></div>
+                </div>
+                <div class="actions" id="actions">
+                    <button id="play-hand" class="btn btn-primary" disabled>Jogar</button>
+                    <button id="truco-btn" class="btn btn-danger" disabled>Truco!</button>
+                    <button id="accept-truco" class="btn btn-success hidden">Aceitar</button>
+                    <button id="reject-truco" class="btn btn-danger hidden">Recusar</button>
+                    <button id="new-game" class="btn btn-secondary">Novo Jogo</button>
+                </div>
+            </div>
+
+            <div class="player-area">
+                <h3>Suas Cartas</h3>
+                <div id="player-cards" class="cards player-cards">
+                    <!-- Cartas do jogador -->
+                </div>
+            </div>
+        </div>
+
+        <div class="rules">
+            <details>
+                <summary>📖 Regras do Truco</summary>
+                <p><strong>Hierarquia das cartas (da mais forte para a mais fraca):</strong></p>
+                <p>3 > 2 > A > K > J > Q > 7 > 6 > 5 > 4</p>
+                <p><strong>Manilhas (quando pedido truco):</strong></p>
+                <p>4, 5, 6, 7 viram manilhas na ordem: 7 > 6 > 5 > 4</p>
+                <p><strong>Valores:</strong> Truco = 3 pontos, Seis = 6 pontos, Nove = 9 pontos, Doze = 12 pontos</p>
+                <p>Melhor de 3 rodadas vence a mão.</p>
+            </details>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
