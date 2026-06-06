@@ -1,41 +1,64 @@
 # 🃏 Truco Paulista
 
-Jogo de Truco completo desenvolvido em JavaScript puro. Jogue contra o computador!
+Jogo de Truco Paulista contra o computador, feito em HTML, CSS e JavaScript puro.
 
-## 🎮 Como Jogar
+## Baralho e distribuição
 
-1. **Clique em uma carta** para selecioná-la
-2. **Clique em "Jogar"** para jogar a carta selecionada
-3. **Peça Truco** para aumentar a aposta
-4. Vença 2 das 3 rodadas para ganhar a mão
-5. Primeiro a chegar em **12 pontos** vence!
+- Baralho de 40 cartas. Naipes: ♥ ♦ ♠ ♣
+- Ordem de força base, da mais fraca para a mais forte:
+  4 < 5 < 6 < 7 < Q < J < K < A < 2 < 3
+- São distribuídas 3 cartas para você e 3 para o computador
+- 1 carta é virada como Vira. A carta seguinte a Vira vira Manilha
 
-## 📊 Hierarquia das Cartas
+## Manilhas
 
-| Posição | Carta |
-|---------|-------|
-| 1º | 3 |
-| 2º | 2 |
-| 3º | A |
-| 4º | K |
-| 5º | J |
-| 6º | Q |
-| 7º | 7 |
-| 8º | 6 |
-| 9º | 5 |
-| 10º | 4 |
+- As 4 cartas do valor da manilha são as mais fortes do jogo, acima do 3
+- Entre as manilhas o desempate é por naipe:
+  Paus ♣ > Copas ♥ > Espadas ♠ > Ouros ♦
+- No jogo elas aparecem com ⭐ na carta
 
-## 🎯 Valores do Truco
+Exemplo: Vira = 6 ♠ → Manilha = 7. Então 7♣ é a carta mais forte do baralho.
 
-- **Truco**: 3 pontos
-- **Seis**: 6 pontos
-- **Nove**: 9 pontos
-- **Doze**: 12 pontos
+## Como se ganha uma mão
 
-## 🚀 Instalação
+A mão é melhor de 3 rodadas:
 
-```bash
-git clone https://github.com/seu-usuario/truco-game.git
-cd truco-game
-# Use qualquer servidor HTTP
-python -m http.server 8000
+1. 2 rodadas vencidas = ganha a mão
+2. Vantagem da primeira: quem vence a 1ª rodada tem vantagem. Se a 2ª empatar, quem venceu a 1ª leva a mão
+3. 1ª rodada empata: quem vencer a 2ª leva a mão
+4. 3ª rodada: se cada um venceu uma, a 3ª decide. Se empatar a 3ª, a mão empata e ninguém pontua
+
+## Valores do Truco
+
+- Mão normal = 1 ponto
+- Truco aceito = 3 pontos
+- Seis = 6 pontos
+- Nove = 9 pontos
+- Doze = 12 pontos
+
+No jogo atual só está implementado o pedido de Truco na 1ª rodada. O computador aceita com 60% de chance. Se recusar, quem pediu ganha os pontos da mão atual.
+
+## Fim de jogo
+
+Primeiro a fazer 12 pontos vence a partida.
+
+## Jogabilidade
+
+1. Clique em uma das suas 3 cartas para selecionar
+2. Clique em Jogar
+3. O computador joga automaticamente
+4. Use Truco! na 1ª rodada se quiser aumentar a aposta
+5. Nova Partida zera placar e começa do zero
+
+## Tecnologias
+
+- HTML5
+- CSS3
+- JavaScript ES6+
+
+## Como jogar
+
+Abra o `index.html` no navegador ou acesse via GitHub Pages.
+
+---
+Desenvolvido para jogar Truco Paulista no celular e desktop.
