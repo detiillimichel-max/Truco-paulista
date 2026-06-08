@@ -62,3 +62,7 @@ Abra o `index.html` no navegador ou acesse via GitHub Pages.
 
 ---
 Desenvolvido para jogar Truco Paulista no celular e desktop.
+
+© 2026 Michel Detilli.
+Todos os direitos reservados. 
+É permitido jogar online. É proibida a cópia, distribuição ou uso comercial do código sem autorização.
